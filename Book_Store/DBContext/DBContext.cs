@@ -9,7 +9,7 @@ namespace Book_Store.DBContext
 {
     public class DBContextClass: DbContext
     {
-        public DbSet<User> User { get; set; }
+        public DbSet<Users> Users { get; set; }
         public DbSet<Books> Books { get; set; }
     }
 }

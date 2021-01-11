@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202101110252080_books-table-added.Designer.cs">
       <DependentUpon>202101110252080_books-table-added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101110553591_slight-tables-correction.cs" />
+    <Compile Include="Migrations\202101110553591_slight-tables-correction.Designer.cs">
+      <DependentUpon>202101110553591_slight-tables-correction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -275,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101110252080_books-table-added.resx">
       <DependentUpon>202101110252080_books-table-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110553591_slight-tables-correction.resx">
+      <DependentUpon>202101110553591_slight-tables-correction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

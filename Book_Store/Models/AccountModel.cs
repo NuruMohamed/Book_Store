@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Book_Store.Models
 {
-    public class User
+    public class Users
     {
         public int id { get; set; }
         public string firstName { get; set; }

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Book_Store.Models.Users>
+
+@{
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
@@ -14,45 +16,54 @@
 </div>
 
 <div id="search-container">
-    <form action="">
-        <label for="search">hey</label>
+    <form action="search">
         <input type="search" name="search" placeholder="Search" />
     </form>
 </div>
 
 <div>
     <div class="category-container">
-        <div class="category-title"> <a href=""> Popular </a> </div>
-        <div class="container">
-            <div class="card" style="width:200px">
-                <img class="card-img-top" src="~/Content/media/images/book.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        hhhhh
-                    </h4>
-                    <div class="card-text">
-                        ghfghfghfghfghfghfghfg
+            <div class="category-title"> <a href=""> Popular </a> </div>
+            <div class="container">
+                @foreach (var book in ViewBag.popularBooks)
+                {<a href="book/@book.id">
+                    <div class="card" style="width:200px">
+                        <img class="card-img-top" src=@Url.Content(book.coverImage) alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                @book.title
+                            </h4>
+                            <div class="card-text">
+                                @book.author
+                            </div>
+                        </div>
                     </div>
-                </div>
+                  </a>
+                }
             </div>
+        
+    </div>
 
-            <div class="card" style="width:200px">
-                <img class="card-img-top" src="~/Content/media/images/book1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        hhhhh
-                    </h4>
-                    <div class="card-text">
-                        ghfghfghfghfghfghfghfg
+    <div class="category-container">
+        <div class="category-title"> <a href=""> Fiction </a> </div>
+        <div class="container">
+            @foreach (var book in ViewBag.fictionBooks)
+            {
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src=@Url.Content(book.coverImage) alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            @book.title
+                        </h4>
+                        <div class="card-text">
+                            @book.author
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div>
 
 
-@foreach(var i in ViewBag.data)
-{
-    <h2>@i.id</h2>
-}
+kkll
