@@ -52,10 +52,10 @@ namespace Book_Store.Controllers
         }
 
         [Route("search")]
-        public ActionResult Search(string term, int page)
+        public ActionResult Search(string term, int? page)
         {
             var searchedBooks = db.Books.Where(book => book.title.Contains(term)).ToList<Books>();
-            ViewBag.searchedBOoks = searchedBooks;
+            ViewBag.searchResult = searchedBooks;
             ViewBag.searchTerm = term;
             return View();
         }

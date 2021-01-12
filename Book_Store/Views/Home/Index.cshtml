@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Book_Store.Models.Users>
 
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 @Styles.Render("~/Content/CSS/Home/index.css")
@@ -17,7 +17,7 @@
 
 <div id="search-container">
     <form action="search">
-        <input type="search" name="search" placeholder="Search" />
+        <input type="search" name="term" placeholder="Search" />
     </form>
 </div>
 

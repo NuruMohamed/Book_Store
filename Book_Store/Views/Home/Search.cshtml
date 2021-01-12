@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@Styles.Render("~/Content/CSS/Home/search.css")
+<div id="search-container">
+    <form action="search">
+        <input type="search" name="term" placeholder="Search" value=@ViewBag.searchTerm/>
+    </form>
+</div>
+
+<div id="search-result">
+    @foreach(var book in ViewBag.searchResult)
+    {
+    <a href=@Url.Content($"book/{book.id}") class="book">
+        <img src=@Url.Content(book.coverImage) style="width:100px">
+        <div class="book-body">
+            <h5 class="book-title">
+               @book.title
+            </h5>
+            <div class="book-author">
+                @book.author
+            </div>
+        </div>
+    </a>
+    }
+    
+</div>
